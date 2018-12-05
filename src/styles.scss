@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: flex;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
 ul.unstyled-list-row {
   display: flex;
   list-style: none;
