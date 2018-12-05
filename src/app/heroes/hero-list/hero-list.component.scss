@@ -1,0 +1,23 @@
+.hero-list {
+  flex-direction: column;
+  max-width: 150px;
+
+  & > li {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #EEE;
+    cursor: pointer;
+    padding: 5px 0;
+
+    &:hover {
+      background-color: #DDD;
+      left: 5px
+    }
+
+    .badge {
+      padding: 5px 10px;
+      background-color: #CCC;
+      margin-right: 5px;
+    }
+  }
+}
