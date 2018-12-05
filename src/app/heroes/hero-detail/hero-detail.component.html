@@ -1,3 +1,10 @@
-<p>
-  hero-detail works!
-</p>
+<div>
+  <h3>{{name}} Details</h3>
+  <div><span>id: </span>{{id}}</div>
+  <div><span>name: </span>{{name}}</div>
+</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="name" placeholder="name" (onfocusout)="save()">
+  </label>
+</div>

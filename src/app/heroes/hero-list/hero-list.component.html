@@ -1,3 +1,5 @@
-<p>
-  hero-list works!
-</p>
+<ul class="unstyled-list-row hero-list">
+  <li *ngFor="let hero of dtHeroList" routerLink="/heroes/{{hero.id}}}">
+    <span>{{hero.id}}</span>{{hero.name}}
+  </li>
+</ul>

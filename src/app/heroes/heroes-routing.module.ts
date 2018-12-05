@@ -4,16 +4,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroListComponent } from "./hero-list/hero-list.component";
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import { HeroService } from "./hero.service";
 
 const routes: Routes = [
   { path: "hero-dashboard", component: DashboardComponent },
-  { path: "hero-list", component: HeroListComponent },
-  { path: "hero-detail", component: HeroDetailComponent }
+  {
+    path: "heroes", component: HeroListComponent, resolve: {
+      dtHeroList: HeroService
+    }
+  },
+  { path: "heroes/:id", component: HeroDetailComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [HeroService]
 })
 export class HeroesRoutingModule {
 }

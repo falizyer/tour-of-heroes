@@ -2,8 +2,7 @@
   <h2>Top Heroes</h2>
   <ul class="unstyled-list-row dashboard-card">
     <li *ngFor="let hero of dtHeroList">
-      <app-dashboard-card [dtId]="hero.id"
-                          [dtName]="hero.name"></app-dashboard-card>
+      {{hero.name}}
     </li>
   </ul>
 </div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Heroes } from "../index";
 
 @Component({
   selector: 'app-hero-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroListComponent implements OnInit {
 
-  constructor() { }
+  private dtHeroList: Heroes.HeroObject[];
+
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    const {dtHeroList} = this.route.snapshot.data;
+    this.dtHeroList = dtHeroList;
   }
 
 }
