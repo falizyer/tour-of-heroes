@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "hero-dashboard", component: DashboardComponent },
   {
     path: "heroes", component: HeroListComponent, resolve: {
-      dtHeroList: HeroService
+      heroList$: HeroService
     }
   },
   { path: "heroes/:id", component: HeroDetailComponent }

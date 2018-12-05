@@ -9,14 +9,14 @@ import { Heroes } from "../index";
 })
 export class HeroListComponent implements OnInit {
 
-  private dtHeroList: Heroes.HeroObject[];
+  private heroList$: Heroes.HeroObject[];
 
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    const {dtHeroList} = this.route.snapshot.data;
-    this.dtHeroList = dtHeroList;
+    const {heroList$} = this.route.snapshot.data;
+    this.heroList$ = heroList$;
   }
 
 }

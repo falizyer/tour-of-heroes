@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
 import { Heroes } from "./index";
 
@@ -8,16 +9,12 @@ import { Heroes } from "./index";
 })
 export class HeroService implements Resolve<Heroes.HeroObject> {
 
-  public constructor() {
+  private heroesUrl = 'api/heroes';
+
+  public constructor(private http: HttpClient) {
   }
 
   public resolve(route, state): any {
-    return [{
-      id: 1,
-      name: "hero 1"
-    }, {
-      id: 2,
-      name: "hero 2"
-    }];
+    return this.http.get<Heroes.HeroObject[]>(this.heroesUrl);
   }
 }
