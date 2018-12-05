@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Heroes } from "../index";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  @Input() dtHeroList: Heroes.HeroObject[];
+
+  constructor() {
+    this.dtHeroList = [{
+      id: 0,
+      name: "name 1"
+    }, {
+      id: 1,
+      name: "name 2"
+    }];
+  }
 
   ngOnInit() {
   }
