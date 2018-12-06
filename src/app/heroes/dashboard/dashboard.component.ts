@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Heroes } from "../index";
-import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,14 +10,14 @@ import { Observable } from "rxjs";
 export class DashboardComponent implements OnInit {
 
   private topRank: number;
-  private heroList$: Observable<Heroes.HeroObject>;
+  private heroList: Heroes.HeroObject[];
 
   constructor(private route: ActivatedRoute) {
     this.topRank = 5;
   }
 
   ngOnInit() {
-    const { heroList$ } = this.route.snapshot.data;
-    this.heroList$ = heroList$;
+    const { heroList } = this.route.snapshot.data;
+    this.heroList = heroList;
   }
 }

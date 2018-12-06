@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -18,6 +18,7 @@ import { DashboardPipePipe } from './dashboard/dashboard-pipe.pipe';
   imports: [
     CommonModule,
     HeroesRoutingModule,
+    ReactiveFormsModule,
     FormsModule
   ]
 })

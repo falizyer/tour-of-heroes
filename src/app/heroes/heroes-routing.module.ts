@@ -9,12 +9,12 @@ import { HeroService } from "./hero.service";
 const routes: Routes = [
   {
     path: "hero-dashboard", component: DashboardComponent, resolve: {
-      heroList$: HeroService
+      heroList: HeroService
     }
   },
   {
     path: "heroes", component: HeroListComponent, resolve: {
-      heroList$: HeroService
+      heroList: HeroService
     }
   },
   { path: "heroes/:id", component: HeroDetailComponent }

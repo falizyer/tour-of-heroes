@@ -28,6 +28,14 @@ export class HeroService implements Resolve<Observable<any>> {
     return this.http.get<Heroes.HeroObject[]>(this.heroesUrl);
   }
 
+  public getHero(id: number): Observable<any> {
+    return this.http.get<Heroes.HeroObject[]>(`${this.heroesUrl}/${id}`);
+  }
+
+  public addHero(hero: Heroes.HeroObject): Observable<Heroes.HeroObject> {
+    return this.http.post<Heroes.HeroObject>(this.heroesUrl, hero, httpOptions);
+  }
+
   /**
    * @override
    * @param route

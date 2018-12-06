@@ -1,5 +1,16 @@
+<form [formGroup]="hero" (ngSubmit)="onSubmit()">
+  <label>
+    Hero name:
+    <input type="text" formControlName="name" required>
+  </label>
+  <label>
+    Hero rank:
+    <input type="number" formControlName="rank" required>
+  </label>
+  <button type="submit" [disabled]="hero.pristine">Submit</button>
+</form>
 <ul class="unstyled-list-row hero-list">
-  <li *ngFor="let hero of heroList$" routerLink="/heroes/{{hero.id}}}">
+  <li *ngFor="let hero of heroList" routerLink="/heroes/{{hero.id}}">
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
 </ul>
