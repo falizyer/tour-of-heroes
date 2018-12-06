@@ -36,6 +36,11 @@ export class HeroService implements Resolve<Observable<any>> {
     return this.http.post<Heroes.HeroObject>(this.heroesUrl, hero, httpOptions);
   }
 
+  public deleteHero(hero: Heroes.HeroObject): Observable<Heroes.HeroObject> {
+    const url = `${this.heroesUrl}/${hero.id}`;
+    return this.http.delete<Heroes.HeroObject>(url, httpOptions);
+  }
+
   /**
    * @override
    * @param route

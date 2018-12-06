@@ -1,6 +1,6 @@
 .hero-list {
   flex-direction: column;
-  max-width: 150px;
+  max-width: 200px;
 
   & > li {
     position: relative;
@@ -18,6 +18,24 @@
       padding: 5px 10px;
       background-color: #CCC;
       margin-right: 5px;
+    }
+
+    .close-ico {
+      float: right;
+    }
+
+    .close-ico:after {
+      display: block;
+      content: "X";
+      width: 11px;
+      height: 11px;
+      color: black;
+    }
+
+    .close-ico:hover {
+      &:after {
+        color: red;
+      }
     }
   }
 }

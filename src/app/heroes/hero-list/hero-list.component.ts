@@ -34,6 +34,15 @@ export class HeroListComponent implements OnInit {
     });
   }
 
+  onClose($event, hero: Heroes.HeroObject) {
+    $event.stopPropagation();
+    this.heroService.deleteHero(hero)
+      .subscribe(_ => {
+        console.log(_);
+        this.heroList = this.heroList.filter(d => d.id !== hero.id);
+      });
+  }
+
   ngOnInit() {
     const { heroList } = this.route.snapshot.data;
     this.heroList = heroList;
