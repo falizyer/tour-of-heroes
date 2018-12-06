@@ -6,12 +6,14 @@ import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardPipePipe } from './dashboard/dashboard-pipe.pipe';
 
 @NgModule({
   declarations: [
     HeroListComponent,
     HeroDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardPipePipe
   ],
   imports: [
     CommonModule,

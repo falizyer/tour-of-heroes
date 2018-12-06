@@ -1,6 +1,16 @@
 .dashboard-card {
 
   li {
+    position: relative;
     background-color: #CCC;
+    min-width: 150px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background-color: #BBB;
+    top: 5px;
   }
 }

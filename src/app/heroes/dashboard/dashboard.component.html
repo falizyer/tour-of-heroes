@@ -1,7 +1,7 @@
 <div class="dashboard-inner-wrap">
   <h2>Top Heroes</h2>
   <ul class="unstyled-list-row dashboard-card">
-    <li *ngFor="let hero of dtHeroList">
+    <li *ngFor="let hero of (heroList$ | dashboardPipe:topRank)" routerLink="/heroes/{{hero.id}}">
       {{hero.name}}
     </li>
   </ul>
