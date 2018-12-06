@@ -1,10 +1,13 @@
-<div>
-  <h3>{{name}} Details</h3>
-  <div><span>id: </span>{{id}}</div>
-  <div><span>name: </span>{{name}}</div>
-</div>
-<div>
+<form [formGroup]="hero" (ngSubmit)="onSubmit()">
+  <h3>{{hero.value.name}} Details</h3>
+  <div><span>id: </span>{{hero.value.id}}</div>
   <label>name:
-    <input [(ngModel)]="name" placeholder="name" (onfocusout)="save()">
+    <input type="text" formControlName="name" placeholder="name">
   </label>
-</div>
+  <br/>
+  <label>rank:
+    <input type="number" formControlName="rank" placeholder="rank">
+  </label>
+  <br/>
+  <button type="submit">Update</button>
+</form>

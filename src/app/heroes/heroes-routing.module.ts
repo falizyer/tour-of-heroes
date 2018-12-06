@@ -7,16 +7,8 @@ import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 import { HeroService } from "./hero.service";
 
 const routes: Routes = [
-  {
-    path: "hero-dashboard", component: DashboardComponent, resolve: {
-      heroList: HeroService
-    }
-  },
-  {
-    path: "heroes", component: HeroListComponent, resolve: {
-      heroList: HeroService
-    }
-  },
+  { path: "hero-dashboard", component: DashboardComponent },
+  { path: "heroes", component: HeroListComponent },
   { path: "heroes/:id", component: HeroDetailComponent }
 ];
 

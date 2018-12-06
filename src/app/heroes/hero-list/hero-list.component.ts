@@ -44,8 +44,10 @@ export class HeroListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const { heroList } = this.route.snapshot.data;
-    this.heroList = heroList;
+    this.heroService.getHeroes()
+      .subscribe(heroList => {
+        this.heroList = heroList;
+      });
   }
 
 }

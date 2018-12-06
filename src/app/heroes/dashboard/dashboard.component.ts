@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Heroes } from "../index";
+import { HeroService } from "../hero.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -12,12 +13,14 @@ export class DashboardComponent implements OnInit {
   private topRank: number;
   private heroList: Heroes.HeroObject[];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private heroService: HeroService) {
     this.topRank = 5;
   }
 
   ngOnInit() {
-    const { heroList } = this.route.snapshot.data;
-    this.heroList = heroList;
+    this.heroService.getHeroes()
+      .subscribe(heroList => {
+        this.heroList = heroList;
+      });
   }
 }
